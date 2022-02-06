@@ -56,6 +56,8 @@ public class ListarPersona extends HttpServlet {
 			System.out.println(e.getMessage());
 			// TODO: handle exception
 		}
+		
+		
 		getServletContext().getRequestDispatcher(url).forward(request,response);
 
 	}
