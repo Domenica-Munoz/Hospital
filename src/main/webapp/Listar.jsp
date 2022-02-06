@@ -30,7 +30,7 @@
 	    <% for (int i=0;i<listapersona.size();i++){
 	    		Persona persona=listapersona.get(i);
 	    		
-		    		out.println("<tr><td class='tg-y698'>"+persona.getIDPersona()+"</td><td class='tg-y698'>"+persona.getNombres()+"</td><td" +
+		    		out.println("<tr><td class='tg-y698'>"+persona.getIDPersona()+"</td><td class='tg-y698'>"+persona.getNombres()+"</td><td>" +
 		    					" class='tg-y698'>"+persona.getApellidos()+"</td><td class='tg-y698'>"+persona.getCedula()+"</td><td class='tg-y698'>"+
 		    					persona.getDireccion()+"</td><td class='tg-y698'>"+persona.getTelefono()+"</td><td class='tg-y698'>"
 		    					+persona.getCorreo()+"</td><td class='tg-y698'>"+persona.getRol()+"</td>");
