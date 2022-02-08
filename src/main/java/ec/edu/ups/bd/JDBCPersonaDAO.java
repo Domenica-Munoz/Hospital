@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ec.edu.ups.dao.PersonaDAO;
+import ec.edu.ups.model.Especialidad;
 import ec.edu.ups.model.Persona;
 
 public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements PersonaDAO {
@@ -172,4 +173,27 @@ public class JDBCPersonaDAO extends JDBCGenericDAO<Persona, String> implements P
 		return administradores;
 	}
 
+	@Override
+	public List<Persona> listarpersonas(String especilidad) {
+		// TODO Auto-generated method stub
+		List<Persona> persona=new ArrayList<Persona>();
+		ResultSet resultSet = connection.queryBD("SELECT per.* from \"Especialidad\" as es" + 
+				"	INNER JOIN \"Doctor_Especialidad\" as des" + 
+				"	on es.id_especialidad= des.id_especialidad and es.nombre_especialidad='"+especilidad+"'" + 
+				"	INNER JOIN \"Persona\" as per" + 
+				"	on per.id_persona= des.id_doctor; ");
+		try {
+			while (resultSet.next()) {
+				persona.add(new Persona(resultSet.getInt("id_persona"), resultSet.getString("cedula"), resultSet.getString("nombres"),
+						resultSet.getString("apellidos"), resultSet.getString("direccion"), resultSet.getString("telefono"),
+						resultSet.getString("correo"), resultSet.getString("rol"), resultSet.getString("password")));
+			}				
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(">>>WARNING (JDBCPersonaDAO persona): " + e.getMessage());
+		}
+		return persona;
+	}
+
+	
 }

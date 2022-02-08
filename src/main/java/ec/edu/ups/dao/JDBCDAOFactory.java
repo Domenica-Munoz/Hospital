@@ -16,6 +16,12 @@ public class JDBCDAOFactory extends FactoryDAO {
 		return new JDBCPersonaDAO();
 	}
 
+	@Override
+	public EspecialidadDAO getEspecialidadDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }

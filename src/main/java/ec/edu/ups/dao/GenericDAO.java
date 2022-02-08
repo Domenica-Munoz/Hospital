@@ -14,5 +14,6 @@ public interface GenericDAO<T, ID> {
 	public List<T> allSecretaria();
 	public List<T> allMedico();
 	public List<T> allAdmin();
+	public List<T> listarpersonas(ID especilidad);
 
 }

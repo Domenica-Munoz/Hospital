@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<c:set var="p" scope="request" value="${Persona}" />
+<form   action="/Hospital/ListarEspecialidad"  method="get" >
+        <c:set var="p" scope="request" value="${Persona}" />
 	<% List<Persona> listapersona = (List<Persona>) request.getAttribute("Persona"); %>
 	<% PrintWriter out2= response.getWriter();%>
 	<table class='tg' style='width:25%'>
@@ -37,7 +37,8 @@
 	    		
 	    }
 	    %>
-
+</form>
 	</table>
+        
 </body>
 </html>

@@ -93,11 +93,17 @@
 						</div>
 						<button type="submit" class="btn btn-primary w-100">Iniciar	Sesión</button>
 					</form>
-										<form   action="/Hospital/ListarPersona"  method="post" >
+					<form   action="/Hospital/ListarPersona"  method="post" >
 					<p> Listado de Personas</p>
-					<input type="submit" value="entrar">
+					<input name ="listar" type="submit" value="entrar">
+					</form>
+						
+					<form   action="/Hospital/ListarEspecialidad"  method="get" >
+					<p> Listado Personas y especialidad</p>
 					
-							</form>
+					<input name ="nombre_especialidad" type="text" id="especialidad">
+					<button type="submit">BUSCAR</button>
+					</form>
 					
 					<p class="font-weight-bold text-center text-muted">O inicia	sesión con</p>
 					<div class="d-flex justify-content-around">
